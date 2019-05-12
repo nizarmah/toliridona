@@ -41,7 +41,7 @@ function windowLoad() {
 			data[3].forEach(function (line) {
 				line = line.trim();
 				if (line.length == 0)
-					line = "&nbsp;";
+					line = " ";
 
 				var li_line		= document.createElement("LI");
 
