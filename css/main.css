@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 	.heart, .heart:before, .heart:after {
 		width			: 0.5em;
 		height			: 0.5em;
-		background		: #e74c3c;  
+		background		: #E5214A;  
 		border-radius	: 500% 500% 500% 0%;
 	}
 
