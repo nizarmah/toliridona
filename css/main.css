@@ -63,3 +63,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-size	: 1.45em;
 	list-style	: none;
 }
+	.uk-accordion .uk-accordion-content li {
+		white-space	: pre;
+	}
