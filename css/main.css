@@ -1,0 +1,68 @@
+body {
+	font-family	: 'Montez', cursive !important;
+}
+
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, 
+.uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+h1, h2, h3, h4, h5, h6 {
+	font-family	: 'Montez', cursive !important;
+}
+
+.uk-navbar-nav {
+	font-size	: 2em;
+	padding		: 1em 0px;
+}
+	.uk-navbar-nav > li:not(:first-child) {
+		padding-left: 1em;
+	}
+
+.heart-logo {
+	margin-top	: 0.15em;
+	transform	: scale(0.9);
+}
+.heart {
+	float		: left;
+	margin		: 0.25em;
+	transform	: rotate(-45deg);
+}
+	.heart, .heart:before, .heart:after {
+		width			: 0.5em;
+		height			: 0.5em;
+		background		: #e74c3c;  
+		border-radius	: 500% 500% 500% 0%;
+	}
+
+	.heart:before, .heart:after {
+		content	: '';
+		display	: block;
+		position: absolute;
+	}
+		.heart:before {
+			margin		: 0.25em;
+			transform	: rotate(0deg);
+		}
+
+		.heart:after {
+			z-index		: -1;  
+			margin-left	: 0.25em;
+			margin-top	: 0.5em;
+			transform	: rotate(0deg) translateY(-0.25em)  translateX(-0.25em); 
+		}
+
+.uk-card > .uk-card-title {
+	font-size	: 2em;
+}
+	.uk-card > p {
+		font-size	: 1.5em;
+	}
+
+.uk-accordion .uk-accordion-title {
+	font-size	: 1.9em;
+}
+.uk-accordion .uk-accordion-content {
+	font-size	: 1.45em;
+	list-style	: none;
+}
+	.uk-accordion .uk-accordion-content li {
+		white-space	: pre;
+	}
