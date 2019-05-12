@@ -1,0 +1,11 @@
+{
+	"name": "toliridona",
+	"version": "1.0.0",
+	"description": "Poems Website dedicated to Liridona",
+	"scripts": {
+		"start": "harp server --port $PORT"
+	},
+	"dependencies": {
+		"harp": "*"
+	}
+}
