@@ -32,12 +32,7 @@ const mini_heart = new mojs.Shape({
 	radius  : 1
 });
 
-document.body.addEventListener('click', function (e) {
-	const coords = { 
-		x: e.pageX, 
-		y: e.pageY
-	};
-	
+function drawHearts(coords) {
 	main_heart
 		.tune( coords )
 		.replay();
@@ -45,4 +40,41 @@ document.body.addEventListener('click', function (e) {
 	mini_heart
 		.tune( coords )
 		.replay();
+}
+
+document.body.addEventListener('click', function (e) {
+	const coords = { 
+		x: e.pageX, 
+		y: e.pageY
+	};
+
+	drawHearts( coords );
+});
+
+window.addEventListener('load', function () {
+	const coords = { 
+		x: 0, 
+		y: 0
+	};
+
+	coords.x	= document.getElementById("dearcard").offsetLeft +
+					document.getElementById("dearcard").offsetWidth - 50;
+	coords.y	= document.getElementById("dearcard").offsetTop +
+					document.getElementById("dearcard").offsetHeight - 18;
+	
+	drawHearts( coords );
+});
+
+window.addEventListener('resize', function () {
+	const coords = { 
+		x: 0, 
+		y: 0
+	};
+
+	coords.x	= document.getElementById("dearcard").offsetLeft +
+					document.getElementById("dearcard").offsetWidth - 50;
+	coords.y	= document.getElementById("dearcard").offsetTop +
+					document.getElementById("dearcard").offsetHeight - 18;
+	
+	drawHearts( coords );
 });
