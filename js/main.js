@@ -51,6 +51,8 @@ function windowLoad() {
 				content.appendChild(li_line);
 			});
 			li_poem.appendChild(content);
+
+			document.getElementById("poemlist").appendChild(li_poem);
 		});
 	});
 };
