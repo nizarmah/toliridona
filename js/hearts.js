@@ -7,12 +7,12 @@ class Heart extends mojs.CustomShape {
 mojs.addShape( 'heart', Heart );
 
 const main_heart = new mojs.Shape({
-	left    : -5, 
-	top     : -25,
+	left    : -9, 
+	top     : -20,
 	shape   : 'heart',
 	fill    : '#E5214A',
-	scale   : { 0 : 20 },
-	angle   : -10,
+	scale   : { 0 : 16 },
+	angle   : -12,
 	easing  : 'elastic.out',
 	duration: 1600,
 	delay   : 0,
@@ -20,12 +20,12 @@ const main_heart = new mojs.Shape({
 });
 
 const mini_heart = new mojs.Shape({
-	left    : 25, 
-	top     : -55,
+	left    : 20, 
+	top     : -40,
 	shape   : 'heart',
 	fill    : '#E5214A',
-	scale   : { 0 : 10 },
-	angle   : 10,
+	scale   : { 0 : 8 },
+	angle   : 12,
 	easing  : 'elastic.out',
 	duration: 1600,
 	delay   : 200,
