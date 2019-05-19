@@ -13,7 +13,7 @@ document.body.addEventListener('click', function (e) {
 		y: e.pageY
 	};
 
-	drawRose( coords );
+	drawRandom( coords );
 });
 
 window.addEventListener('load', function () {
