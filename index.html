@@ -5,12 +5,14 @@
 		<meta name="keywords" content="liridona,toliridona,to liridona">
 		<meta name="author" content="Nizar Mahmoud">
 
+		<link rel="manifest" href="manifest.json">
+
 		<title>To Liridona</title>
 
 		<link rel="shortcut icon" type="image/png" href="img/heart.png" />
 
 		<!-- UIkit CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/css/uikit.min.css" />
+		<link rel="stylesheet" href="css/extra/uikit.min.css" />
 
 		<!-- Google Fonts -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montez" />
@@ -19,8 +21,8 @@
 		<link rel="stylesheet" href="css/main.css" />
 
 		<!-- UIkit JS -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit-icons.min.js"></script>
+		<script src="js/extra/uikit.min.js"></script>
+		<script src="js/extra/uikit-icons.min.js"></script>
 
 		<!-- Custom JS -->
 		<script src="js/data.js"></script>
@@ -36,36 +38,33 @@
 						<li><span>To Liridona</span></li>
 					</ul>
 				</div>
+
+				<div class="uk-navbar-right">
+					<ul class="uk-navbar-nav">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#poems">Poems</a></li>
+					</ul>
+				</div>
 			</nav>
 
-			<br />
-
-			<div>
+			<div id="home" class="dearcard-container">
 				<div id="dearcard" class="uk-card uk-card-default uk-card-large uk-card-body">
 					<h1 class="uk-card-title">Dear Liridona,</h1>
 					<p>As long as this is online, my love for you eternally remains. I am yours and will forever be.<br>To show you that I have not forgotten, this will be dedicated to your poems, my love.</p>
 				</div>
 			</div>
 
-			<br />
-			<br />
-			<br />
-
-			<div>
+			<div id="poems" class="poemcard-container">
 				<div class="uk-card uk-card-default uk-card-large uk-card-body">
 					<ul id="poemlist" uk-accordion="multiple: true">
 					</ul>
 				</div>
 			</div>
 
-			<br />
-			<br />
-			<br />
-
 		</div>
 
 		<!-- MoJS Library --->
-		<script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+		<script src="js/extra/mo.min.js"></script>
 
 		<!-- MoJS Shapes --->
 		<script src="js/shape/hearts.js"></script>
@@ -73,5 +72,13 @@
 
 		<!-- MoJS Script --->
 		<script src="js/motion.js"></script>
+
+		<script>
+		if (!navigator.serviceWorker.controller) {
+			navigator.serviceWorker.register("/sw.js").then(function(reg) {
+				console.log("Service worker has been registered for scope: " + reg.scope);
+			});
+		}
+		</script>
 	</body>
 </html>
