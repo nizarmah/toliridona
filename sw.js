@@ -7,11 +7,11 @@ var preLoad = function(){
 	return caches.open("offline").then(function(cache) {
 		console.log("caching index");
 		return cache.addAll([
-			"/", 
-			"/poems/a_fragile_rose.txt",
-			"/poems/a_rose_against_the_winds.txt",
-			"/poems/beauty_and_the_beast.txt",
-			"/poems/rose_under_the_snow.txt",
+			"/toliridona/", 
+			"/toliridona/poems/a_fragile_rose.txt",
+			"/toliridona/poems/a_rose_against_the_winds.txt",
+			"/toliridona/poems/beauty_and_the_beast.txt",
+			"/toliridona/poems/rose_under_the_snow.txt",
 		]);
 	});
 };
