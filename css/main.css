@@ -1,11 +1,5 @@
 body * {
 	font-family	: 'Montez', cursive !important;
-	overflow: hidden;
-}
-
-.uk-container {
-	overflow: auto;
-	max-height: 100%;
 }
 
 .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, 
