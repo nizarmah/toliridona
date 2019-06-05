@@ -29,6 +29,7 @@
 		<!-- Custom JS -->
 		<script src="js/data.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/pwa.js"></script>
 	</head>
 
 	<body class="uk-background-muted">
@@ -43,23 +44,25 @@
 
 				<div class="uk-navbar-right">
 					<ul class="uk-navbar-nav">
-						<li><a href="#home">Home</a></li>
-						<li><a href="#poems">Poems</a></li>
+						<li><a class="navbar-link" data-target="#home" href="#home">Home</a></li>
+						<li><a class="navbar-link" data-target="#poems" href="#poems">Poems</a></li>
 					</ul>
 				</div>
 			</nav>
 
-			<div id="home" class="dearcard-container">
-				<div id="dearcard" class="uk-card uk-card-default uk-card-large uk-card-body">
-					<h1 class="uk-card-title">Dear Liridona,</h1>
-					<p>As long as this is online, my love for you eternally remains. I am yours and will forever be.<br>To show you that I have not forgotten, this will be dedicated to your poems, my love.</p>
+			<div class="content-container">
+				<div id="home" class="dearcard-container card-container">
+					<div id="dearcard" class="uk-card uk-card-default uk-card-large uk-card-body">
+						<h1 class="uk-card-title">Dear Liridona,</h1>
+						<p>As long as this is online, my love for you eternally remains. I am yours and will forever be.<br>To show you that I have not forgotten, this will be dedicated to your poems, my love.</p>
+					</div>
 				</div>
-			</div>
 
-			<div id="poems" class="poemcard-container">
-				<div class="uk-card uk-card-default uk-card-large uk-card-body">
-					<ul id="poemlist" uk-accordion="multiple: true">
-					</ul>
+				<div id="poems" class="poemcard-container card-container">
+					<div class="uk-card uk-card-default uk-card-large uk-card-body">
+						<ul id="poemlist" uk-accordion="multiple: true">
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

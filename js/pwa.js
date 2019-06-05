@@ -6,10 +6,21 @@ function openSection(sectionId) {
 	document.querySelector(sectionId).style.display = "block";
 }
 
-window.addEventListener("load", function () {
+function pwaSetup() {
+	if (window.innerWidth > 768)
+		return;
+
 	document.querySelectorAll(".navbar-link").forEach(function (navbarLink) {
-		navbarLink.addEventListener("click", function () {
+		navbarLink.addEventListener("click", function (event) {
 			openSection(navbarLink.dataset.target);
+
+			event.preventDefault();
+			event.stopPropagation();
 		});
 	});
-});
+
+	openSection("#home");
+}
+
+window.addEventListener("load", pwaSetup);
+window.addEventListener("resize", pwaSetup);

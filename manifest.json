@@ -2,11 +2,11 @@
 	"name": "To Liridona",
 	"short_name": "To Liridona",
 	"theme_color": "#e5214a",
-	"background_color": "#bf2142",
+	"background_color": "#ffffff",
 	"display": "standalone",
 	"orientation": "portrait",
 	"scope": "/",
-	"start_url": "https://toliridona.herokuapp.com/pwa.html",
+	"start_url": "https://toliridona.herokuapp.com/",
 	"icons": [
 		{
 			"src": "https://toliridona.herokuapp.com/img/icon.png",
