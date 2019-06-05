@@ -1,5 +1,10 @@
 body * {
+	overflow: hidden;
 	font-family	: 'Montez', cursive !important;
+}
+
+.body-inner-container {
+	overflow: auto;
 }
 
 .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, 
