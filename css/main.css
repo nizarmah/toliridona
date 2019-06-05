@@ -9,10 +9,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .uk-navbar {
+	max-width: 1200px;
 	width: calc(100% - 3.750em);
 	position: fixed;
-	top: 0px; left: 0px;
-	padding: 0px 1.875em;
+	top: 0px; left: auto;
 }
 
 .uk-navbar-nav {
