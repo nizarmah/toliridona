@@ -8,7 +8,6 @@ function openSection(sectionId) {
 
 window.addEventListener("load", function () {
 	document.querySelectorAll(".navbar-link").forEach(function (navbarLink) {
-		console.log("HEY");
 		navbarLink.addEventListener("click", function () {
 			openSection(navbarLink.dataset.target);
 		});
