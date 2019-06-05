@@ -6,10 +6,10 @@
 	"display": "standalone",
 	"orientation": "portrait",
 	"scope": "/",
-	"start_url": "https://toliridona.herokuapp.com/",
+	"start_url": "https://nizarmah.github.io/toliridona/",
 	"icons": [
 		{
-			"src": "https://toliridona.herokuapp.com/img/icon.png",
+			"src": "https://nizarmah.github.io/toliridona/img/icon.png",
 			"sizes": "512x512"
 		}
 	]
