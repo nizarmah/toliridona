@@ -6,7 +6,13 @@ var preLoad = function(){
 	console.log("Installing web app");
 	return caches.open("offline").then(function(cache) {
 		console.log("caching index");
-		return cache.addAll(["/", "/poems"]);
+		return cache.addAll([
+			"/", 
+			"/poems/a_fragile_rose.txt",
+			"/poems/a_rose_against_the_winds.txt",
+			"/poems/beauty_and_the_beast.txt",
+			"/poems/rose_under_the_snow.txt",
+		]);
 	});
 };
 
