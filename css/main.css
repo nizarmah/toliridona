@@ -21,10 +21,17 @@ body {
 	-ms-usertap-highlight-color: transparent;
 	tap-highlight-color: transparent;
 
-	-webkit-touch-callout: none;
+	-webkit-touch-callout: none; 
 	-moz-touch-callout: none;
 	-ms-touch-callout: none;
 	touch-callout: none;
+}
+
+a {
+	-webkit-touch-callout: none !important; 
+	-moz-touch-callout: none !important;
+	-ms-touch-callout: none !important;
+	touch-callout: none !important;
 }
 
 .body-inner-container {
