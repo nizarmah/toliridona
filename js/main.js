@@ -1,22 +1,32 @@
 function readPoem(poem, callback) {
-    var rawFile	= new XMLHttpRequest();
+	if (!navigation.online) {
+		try {
+			return callback(localStorage.getItem(poem));
+		} catch (e) {}
+	}
 
-    rawFile.open("GET", "poems/" + poem, false);
-    rawFile.onreadystatechange = function () {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText	= rawFile.responseText;
-                allText		= allText.split("#");
-                allText[3]	= allText[3].split(">");
-                allText[3]	= allText[3].slice(1, allText[3].length);
+	var rawFile	= new XMLHttpRequest();
 
-                return callback(allText);
-            }
-        }
-    }
-    rawFile.send(null);
+	rawFile.open("GET", "poems/" + poem, false);
+	rawFile.onreadystatechange = function () {
+		if(rawFile.readyState === 4)
+		{
+			if(rawFile.status === 200 || rawFile.status == 0)
+			{
+				var allText	= rawFile.responseText;
+				allText		= allText.split("#");
+				allText[3]	= allText[3].split(">");
+				allText[3]	= allText[3].slice(1, allText[3].length);
+
+				try {
+					localStorage.setItem(poem, allText);
+				} catch (e) {}
+
+				return callback(allText);
+			}
+		}
+	}
+	rawFile.send(null);
 }
 
 function windowLoad() {
