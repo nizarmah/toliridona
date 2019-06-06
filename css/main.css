@@ -10,6 +10,21 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
 	overflow: hidden;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	
+	-webkit-tap-highlight-color: transparent;
+	-moz-tap-highlight-color: transparent;
+	-ms-usertap-highlight-color: transparent;
+	tap-highlight-color: transparent;
+
+	-webkit-touch-callout: none;
+	-moz-touch-callout: none;
+	-ms-touch-callout: none;
+	touch-callout: none;
 }
 
 .body-inner-container {
