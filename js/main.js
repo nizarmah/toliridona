@@ -1,5 +1,5 @@
 function readPoem(poem, callback) {
-	if (!navigation.online) {
+	if (!navigator.onLine) {
 		try {
 			return callback(localStorage.getItem(poem));
 		} catch (e) {}
