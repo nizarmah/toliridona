@@ -20,23 +20,15 @@ messaging.requestPermission()
 	})
 	.then(function (token) {
 		console.log("Firebase Messaging : Token retrieved");
+
+		try {
+			if (!localStorage.getItem("subscribed"))
+				addToTopic("toliridona", token);
+		} catch (e) { addToTopic("toliridona", token); }
 	})
 	.catch(function (err) {
 		console.log("Firebase Messaging : Error occured ", err);
 	});
-
-messaging.onTokenRefresh(function() {
-	messaging.getToken()
-		.then(function(refreshedToken) {
-			console.log('Firebase Messaging : Token refreshed');
-
-			addToTopic("toliridona", refreshedToken);
-		})
-		.catch(function(err) {
-			console.log('Firebase Messaging : Unable to retrieve refreshed token ', err);
-		});
-});
-
 
 messaging.onMessage(function (payload) {
 	UIkit.notification({
@@ -61,6 +53,8 @@ function addToTopic(topic, token) {
 		{
 			if(request.status === 200 || request.status == 0)
 			{
+				localStorage.setItem("subscribed", true);
+
 				console.log('Firebase Messaging : Subscribed to Topic');
 			}
 		}
