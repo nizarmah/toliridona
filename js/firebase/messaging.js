@@ -22,7 +22,7 @@ messaging.requestPermission()
 		console.log("Firebase Messaging : Token retrieved");
 	})
 	.catch(function (err) {
-		console.log("Firebase Messaging : Error occured");
+		console.log("Firebase Messaging : Error occured ", err);
 	});
 
 messaging.onTokenRefresh(function() {
@@ -33,7 +33,7 @@ messaging.onTokenRefresh(function() {
 			addToTopic("toliridona", refreshedToken);
 		})
 		.catch(function(err) {
-			console.log('Firebase Messaging : Unable to retrieve refreshed token');
+			console.log('Firebase Messaging : Unable to retrieve refreshed token ', err);
 		});
 });
 
