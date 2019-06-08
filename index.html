@@ -84,10 +84,16 @@
 		<!-- MoJS Script --->
 		<script src="js/motion.js"></script>
 
+		<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-messaging.js"></script>
+		<script src="js/firebase/messaging.js"></script>
+
 		<script>
 		if (!navigator.serviceWorker.controller) {
 			navigator.serviceWorker.register("/toliridona/sw.js").then(function(reg) {
 				console.log("Service worker has been registered for scope: " + reg.scope);
+
+				messaging.useServiceWorker(reg);
 			});
 		}
 		</script>

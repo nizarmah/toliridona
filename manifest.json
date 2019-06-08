@@ -2,7 +2,7 @@
 	"name": "To Liridona",
 	"short_name": "To Liridona",
 	"theme_color": "#e5214a",
-	"background_color": "#ffffff",
+	"background_color": "#f8f8f8",
 	"display": "standalone",
 	"orientation": "portrait",
 	"scope": "/",
@@ -12,5 +12,12 @@
 			"src": "https://nizarmah.github.io/toliridona/img/icon.png",
 			"sizes": "512x512"
 		}
-	]
+	],
+	"author": {
+		"name": "Nizar Mahmoud",
+		"website": "https://nizarmah.me/",
+		"github": "https://github.com/nizarmah",
+		"source-repo": "https://github.com/nizarmah/toliridona/"
+	},
+	"gcm_sender_id": "103953800507"
 }

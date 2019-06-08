@@ -1,3 +1,45 @@
+/* 
+ * FireBase Messaging
+ * ------------------------------------------------------------------------- 
+ */
+
+importScripts('https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/5.0.0/firebase-messaging.js');
+
+var firebaseConfig = {
+	apiKey: "AIzaSyDrFTtoY_amG2p-tI_2YmPkV6TJoRNzrVg",
+	authDomain: "toliridona.firebaseapp.com",
+	databaseURL: "https://toliridona.firebaseio.com",
+	projectId: "toliridona",
+	storageBucket: "toliridona.appspot.com",
+	messagingSenderId: "856375581322",
+	appId: "1:856375581322:web:370056882eaeddb3"
+};
+firebase.initializeApp(firebaseConfig);
+
+var messaging = firebase.messaging();
+
+messaging.setBackgroundMessageHandler(function(payload) {
+	console.log('Firebase Messaging : Received background message ', payload);
+
+	var notificationTitle = 'To Liridona';
+	var notificationOptions = {
+		body: payload.data.message,
+		icon: '/toliridona/img/icon.png',
+		priority: 'high'
+	};
+
+	return self.registration.showNotification(notificationTitle,
+				notificationOptions);
+});
+
+/* ------------------------------------------------------------------------- */
+
+/* 
+ * PWA Caching
+ * ------------------------------------------------------------------------- 
+ */
+
 self.addEventListener("install", function(event) {
 	event.waitUntil(preLoad());
 });
@@ -51,3 +93,5 @@ var returnFromCache = function(request){
 		});
 	});
 };
+
+/* ------------------------------------------------------------------------- */

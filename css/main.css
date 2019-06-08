@@ -130,6 +130,13 @@ div[data-name="mojs-shape"] {
 	pointer-events: none;
 }
 
+.uk-notification-message {
+    border-radius: 4px !important;
+	color: #fff !important;
+    background-color: #222 !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,.32) !important;
+}
+
 @media screen and (max-width: 768px) {
 	.uk-navbar {
 		flex-wrap: wrap;
