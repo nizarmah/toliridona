@@ -89,13 +89,11 @@
 		<script src="js/firebase/messaging.js"></script>
 
 		<script>
-		if (!navigator.serviceWorker.controller) {
-			navigator.serviceWorker.register("/toliridona/sw.js").then(function(reg) {
-				console.log("Service worker has been registered for scope: " + reg.scope);
+		navigator.serviceWorker.register("/toliridona/sw.js").then(function(reg) {
+			console.log("Service worker has been registered for scope: " + reg.scope);
 
-				messaging.useServiceWorker(reg);
-			});
-		}
+			messaging.useServiceWorker(reg);
+		});
 		</script>
 	</body>
 </html>
