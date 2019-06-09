@@ -7,15 +7,22 @@ function getWhyILoveYouContentDataOffline() {
 }
 
 function getWhyILoveYouContentData(callback) {
-	if (!navigator.onLine) {
-		return callback(getWhyILoveYouContentDataOffline());
-	}
+	// in case no internet connection or slow connection
+	// load the offline already existing data first
+	callback(getWhyILoveYouContentDataOffline());
 
 	database.collection("whyiloveyou").doc("whyiloveyou")
 		.onSnapshot(function (doc) {
-			localStorage.setItem("whyiloveyou_content", doc.data().highlighted);
+			var whyILoveYouContent = "";
 
-			return callback(doc.data().highlighted);
+			try {
+				whyILoveYouContent = doc.data().highlighted;
+			} catch (e) {}
+
+			if (whyILoveYouContent != "") {
+				localStorage.setItem("whyiloveyou_content", whyILoveYouContent);
+				callback(whyILoveYouContent);
+			}
 		});
 }
 
@@ -25,18 +32,20 @@ function setWhyILoveYouContent(content) {
 
 function getPoemsListDataOffline() {
 	try {
+		var poemsNum = localStorage.getItem("poems_list");
 		var poemsList = [];
-		if (localStorage.getItem("poems_list").length > 0)
-			poemsList = localStorage.getItem("poems_list");
+
+		for (var i = 1; i <= poemsNum; i++)
+			poemsList.unshift(localStorage.getItem("poem_" + i));
 
 		return poemsList;
 	} catch (e) {}
 }
 
 function getPoemsListData(callback) {
-	if (!navigator.onLine) {
-		return callback(getPoemsListDataOffline());
-	}
+	// in case no internet connection or slow connection
+	// load the offline already existing data first
+	callback(getPoemsListDataOffline());
 
 	database.collection("poems").where("published", "==", true)
 		.onSnapshot(function (querySnapshot) {
@@ -44,11 +53,14 @@ function getPoemsListData(callback) {
 
 			querySnapshot.forEach(function (doc) {
 				poemsList.unshift(doc.data().content);
-			});
 
-			localStorage.setItem("poems_list", poemsList);
-			
-			return callback(poemsList);
+				localStorage.setItem("poem_" + poemsList.length, poemsList);
+			});
+			localStorage.setItem("poems_list", poemsList.length);
+
+			if (poemsList.length > 0) {
+				callback(poemsList);
+			}
 		});
 }
 
@@ -59,7 +71,7 @@ function formatPoemContent(content) {
 	data[3] = data[3].slice(1, data[3].length);
 
 	var li_poem = document.createElement("LI");
-	
+
 	var title = document.createElement("A");
 	title.className	= "uk-accordion-title";
 	title.href = "#";
