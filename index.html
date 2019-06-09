@@ -30,12 +30,10 @@
 		<script src="js/extra/uikit-icons.min.js"></script>
 
 		<!-- Custom JS -->
-		<script src="js/data.js"></script>
-		<script src="js/main.js"></script>
 		<script src="js/pwa.js"></script>
 	</head>
 
-	<body class="uk-background-muted" ontouchstart="">
+	<body class="uk-background-muted">
 		<div class="uk-width-1-1 uk-height-1-1 body-inner-container">
 			<div class="uk-container">
 				<div class="navbar-fixed" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
@@ -62,6 +60,11 @@
 							<h1 class="uk-card-title">Dear Liridona,</h1>
 							<p>As long as this is online, my love for you eternally remains. I am yours and will forever be.<br>To show you that I have not forgotten, this will be dedicated to your poems, my love.</p>
 						</div>
+
+						<div id="whyiloveyoucard" class="uk-card uk-card-default uk-card-large uk-card-body uk-margin-large-top">
+							<h1 class="uk-card-title">Why I love you?</h1>
+							<p id="whyiloveyou">As long as this is online, my love for you eternally remains. I am yours and will forever be.<br>To show you that I have not forgotten, this will be dedicated to your poems, my love.</p>
+						</div>
 					</div>
 
 					<div id="poems" class="poemcard-container card-container">
@@ -84,9 +87,19 @@
 		<!-- MoJS Script --->
 		<script src="js/motion.js"></script>
 
+		<!-- Firebase Library -->
 		<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-messaging.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-firestore.js"></script>
+
+		<!-- Firebase Config -->
+		<script src="js/firebase/config.js"></script>
+
+		<!-- Firebase Messaging -->
 		<script src="js/firebase/messaging.js"></script>
+
+		<!-- Firebase Database -->
+		<script src="js/firebase/database.js"></script>
 
 		<script>
 		navigator.serviceWorker.register("/toliridona/sw.js").then(function(reg) {
