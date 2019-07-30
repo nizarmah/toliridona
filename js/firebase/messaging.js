@@ -27,7 +27,7 @@ messaging.onMessage(function (payload) {
 });
 
 function addToTopic(topic, token) {
-	var req_url = "https://cors.io?https://us-central1-toliridona.cloudfunctions.net/addToTopic";
+	var req_url = "https://us-central1-toliridona.cloudfunctions.net/addToTopic";
 	var req_par = [];
 
 	req_par.push("topic=" + topic);
